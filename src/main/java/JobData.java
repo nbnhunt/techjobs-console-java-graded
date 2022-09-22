@@ -95,8 +95,25 @@ public class JobData {
      */
     public static ArrayList<HashMap<String, String>> findByValue(String value) {
 
+        // nested loop to allow for added columns
+        // will be similar to findByColumnAndValue
+        // this method needs to be called "somewhere in main" -> the "All" search
+        // instance method b/c of method in TechJobs.java -> needs object
+        // break should prevent duplicates re: 3.2.5, due to all-column-all-row search
+
         // load data, if not already loaded
         loadData();
+
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
+
+        for (HashMap<String, String> row : allJobs) {
+            for (String fields : row.values()) {
+                if (fields.toLowerCase().contains(value)) {
+                    jobs.add(row);
+                    break;
+                }
+            }
+        }
 
         // TODO - implement this method
         return null;
