@@ -118,6 +118,9 @@ public class TechJobs {
     }
 
     // Print a list of jobs
+    // printJobs takes input from the search (find search) and prints out a formatted list
+    // if -> else w/ a nested loop for potential added lines
+
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
         // getter method -> map entries in csv

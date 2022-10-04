@@ -60,7 +60,6 @@ public class JobData {
     /**
      * Returns results of search the jobs data by key/value, using
      * inclusion of the search term.
-     *
      * For example, searching for employer "Enterprise" will include results
      * with "Enterprise Holdings, Inc".
      *
@@ -108,8 +107,11 @@ public class JobData {
 
         for (HashMap<String, String> row : allJobs) {
             for (String key : row.keySet()) {
+                // single out the key from the rows in the HashMap:
                 String aValue = row.get(key);
+                // verify that they key.toLowerCase() matches the "value" from line 93
                 if (aValue.toLowerCase().contains(value.toLowerCase())) {
+                    // is "value" in 113 Java magic? I get that I'm searching for it but where does it come from?
                     jobs.add(row);
                     break;
                 }
