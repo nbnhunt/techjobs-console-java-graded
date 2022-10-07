@@ -111,7 +111,7 @@ public class JobData {
                 String aValue = row.get(key);
                 // verify that they key.toLowerCase() matches the "value" from line 93
                 if (aValue.toLowerCase().contains(value.toLowerCase())) {
-                    // is "value" in 113 Java magic? I get that I'm searching for it but where does it come from?
+                    // compare with value input by user
                     jobs.add(row);
                     break;
                 }
